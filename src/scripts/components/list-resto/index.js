@@ -14,6 +14,7 @@ class ListResto extends HTMLElement {
     this._restorants.map(_resto => {
       const restoItem = document.createElement('item-resto');
       restoItem.resto = _resto;
+      restoItem.classList.add('grid-item', 'card');
       this.appendChild(restoItem);
     });
   }

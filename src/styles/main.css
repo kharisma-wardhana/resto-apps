@@ -212,3 +212,64 @@ body {
     padding-right: 15px;
     padding-left: 15px;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: min-content min-content min-content;
+    padding: 3%;
+    column-gap: 8%;
+    text-align: center;
+    justify-items: center;
+}
+
+.grid-item {
+    text-align: center;
+    padding: 30px;
+}
+
+.resto-name {
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 600;
+    justify-content: center;
+    padding-bottom: 16px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+
+.info {
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 300px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2%;
+        row-gap: 4%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
