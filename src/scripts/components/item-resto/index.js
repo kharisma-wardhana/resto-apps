@@ -17,8 +17,11 @@ class ItemResto extends HTMLElement {
         <div class="row">
           <img class="thumbnail" src="${this._resto.pictureId}">
         </div>
+        <div class="desc">
+          ${this._resto.description}
+        </div>
         <div class="row info">
-          <span class="location">Lokasi: ${this._resto.city}</span>
+          <span class="location">${this._resto.city}</span>
           <span class="rate">Rating: ${this._resto.rating}</span>
         </div>
     `;

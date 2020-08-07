@@ -5,7 +5,8 @@
 }
 
 main {
-    display: block;
+    padding-bottom: 10%;
+    background-color: #627180;
 }
 
 body,
@@ -18,12 +19,12 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 2;
     text-align: left;
     color: #424242;
     background-color: #fff;
     min-height: 75rem;
-    padding-top: 3.5rem;
+    padding-top: 4rem;
 }
 
 .navbar {
@@ -68,6 +69,7 @@ body {
     margin-bottom: 0;
     list-style: none;
     margin-right: auto !important;
+    flex-direction: column;
 }
 
 .nav_link {
@@ -85,9 +87,17 @@ body {
     color: rgba(255, 255, 255, .5);
 }
 
+.navbar-dark .navbar-nav .nav_link:hover,
+.navbar-dark .navbar-nav .nav_link:focus {
+    font-weight: 600;
+    color: #e9ecef;
+    transition: color 1s;
+}
+
 .navbar-dark .navbar-nav .active>.nav_link,
 .navbar-dark .navbar-nav .nav_link.active {
-    color: #fff;
+    color: #e9ecef;
+    font-weight: 600;
 }
 
 .navbar-dark .navbar-toggler-icon {
@@ -99,9 +109,17 @@ body {
     border-color: rgba(255, 255, 255, .1);
 }
 
+.navbar-dark .navbar-toggler:focus {
+    outline-color: #e9ecef;
+}
+
 @media (min-width: 768px) {
     .navbar-expand-md .navbar-toggler {
         display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
     }
 }
 
@@ -149,9 +167,7 @@ body {
 
 .hero {
     padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: .3rem;
+    background: center / cover no-repeat url('../public/images/hero-image_3.jpg');
 }
 
 .container {
@@ -186,9 +202,9 @@ body {
     }
 
     .navbar-expand-md .navbar-collapse {
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
         -ms-flex-preferred-size: auto;
         flex-basis: auto;
         justify-content: flex-end;
@@ -236,10 +252,11 @@ body {
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
+    background-color: whitesmoke;
 }
 
 .thumbnail {
@@ -258,12 +275,12 @@ body {
     }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
     .grid-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 2%;
-        row-gap: 4%;
+        row-gap: 1%;
     }
 }
 
@@ -271,5 +288,57 @@ body {
     .grid-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2%;
+        row-gap: 3%;
     }
+}
+
+.right {
+    float: right;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.grey-text {
+    color: darkgrey;
+}
+
+.darken {
+    background-color: #343a40;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer-copyright a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.desc {
+    display: none;
+}
+
+.desc.show {
+    display: flex;
+    overflow: hidden;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.hide {
+    display: none;
 }
