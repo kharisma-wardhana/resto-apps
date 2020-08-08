@@ -10,7 +10,7 @@ class ListResto extends HTMLElement {
 
   render() {
     this.innerHTML = '';
-    console.log(this._restorants);
+    // console.log(this._restorants);
     this._restorants.map(_resto => {
       const restoItem = document.createElement('item-resto');
       restoItem.resto = _resto;

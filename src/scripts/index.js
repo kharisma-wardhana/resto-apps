@@ -13,13 +13,10 @@ const renderList = async () => {
   const results = await RestoData.getAllData();
   restoListElement.restorants = results.restaurants;
 
-  let restoImg = document.getElementsByClassName('thumbnail');
-  for (let i = 0; i < restoImg.length; i++) {
-    restoImg[i].addEventListener('click', () => {
-      console.log('show desc');
-      let rowImg = restoImg[i].parentElement;
-      let desc = rowImg.nextElementSibling;
-      rowImg.classList.toggle('hide');
+  let btnInfo = document.getElementsByClassName('info');
+  for (let i = 0; i < btnInfo.length; i++) {
+    let desc = btnInfo[i].previousElementSibling;
+    btnInfo[i].addEventListener('click', () => {
       desc.classList.toggle('show');
     });
   }

@@ -9,7 +9,7 @@ class Footer extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <div class="darken white-text">
+        <div class="bg-dark white-text">
             <div class="footer-copyright">
                 <div class="container">
                     © 2020 Copyright KharismaWardhana

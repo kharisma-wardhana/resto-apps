@@ -9,13 +9,15 @@ class HeroElement extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <div class="hero white-text">
-            <div class="container">
-                <h1 class="display-3">Bonjour!</h1>
-                <p>
-                    Start your journey to explore hidden foods in every city.
-                </p>
-            </div>
+        <div class="row">
+          <div class="col hero white-text">
+              <div class="container">
+                  <h1 class="display-3">Bonjour!</h1>
+                  <p>
+                      Start your journey to explore hidden foods in every city.
+                  </p>
+              </div>
+          </div>
         </div>
           `;
   }

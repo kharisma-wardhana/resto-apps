@@ -4,27 +4,44 @@
     box-sizing: border-box;
 }
 
+::after,
+::before {
+    box-sizing: border-box;
+}
+
 main {
     padding-bottom: 10%;
-    background-color: #627180;
+    background-color: #33658A;
 }
 
 body,
 html {
     width: 100%;
     height: 100%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
-    font-weight: 400;
     line-height: 2;
-    text-align: left;
     color: #424242;
     background-color: #fff;
     min-height: 75rem;
     padding-top: 4rem;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #bf1722;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 .navbar {
@@ -58,6 +75,20 @@ body {
 
 .navbar-dark .navbar-brand {
     color: #fff;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.app-brand {
+    align-items: center;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+.app-brand span {
+    padding-left: 15px;
 }
 
 .navbar-nav {
@@ -125,8 +156,8 @@ body {
 
 .navbar-toggler-icon {
     display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
     vertical-align: middle;
     content: "";
     background: no-repeat center center;
@@ -162,12 +193,22 @@ body {
 }
 
 .bg-dark {
-    background-color: #343a40 !important;
+    background-color: #2F4858 !important;
 }
 
 .hero {
     padding: 2rem 1rem;
-    background: center / cover no-repeat url('../public/images/hero-image_3.jpg');
+    background: center center / cover no-repeat url('../public/images/hero-image_3.jpg');
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
 }
 
 .container {
@@ -192,7 +233,7 @@ body {
     }
 
     .hero {
-        padding: 4rem 2rem;
+        padding: 6rem 3rem;
     }
 }
 
@@ -240,7 +281,7 @@ body {
 
 .grid-item {
     text-align: center;
-    padding: 30px;
+    padding: 10px;
 }
 
 .resto-name {
@@ -252,11 +293,11 @@ body {
 }
 
 .card {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
-    background-color: whitesmoke;
+    background-color: #DBD3D8;
 }
 
 .thumbnail {
@@ -265,13 +306,29 @@ body {
 }
 
 .info {
-    justify-content: space-around;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: inherit;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.info:hover,
+.info:focus {
+    outline: none;
+    color: #F26419;
+    font-weight: bold;
 }
 
 @media screen and (min-width: 300px) {
     .grid-container {
         display: grid;
         grid-template-columns: 1fr;
+        row-gap: 10px;
     }
 }
 
@@ -303,10 +360,6 @@ body {
 
 .grey-text {
     color: darkgrey;
-}
-
-.darken {
-    background-color: #343a40;
 }
 
 .footer-copyright {
@@ -341,4 +394,16 @@ body {
 
 .hide {
     display: none;
+}
+
+.rate {
+    background-color: #33658A;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    white-space: nowrap;
+    padding: 10px;
 }

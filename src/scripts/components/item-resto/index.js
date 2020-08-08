@@ -9,21 +9,19 @@ class ItemResto extends HTMLElement {
   }
 
   render() {
-    console.log(this._resto);
+    // console.log(this._resto);
     this.innerHTML = `
         <div class="row resto-name"> 
-          ${this._resto.name}
+          <span>${this._resto.name}</span>
         </div>
         <div class="row">
-          <img class="thumbnail" src="${this._resto.pictureId}">
+          <span class="rate">${this._resto.rating}</span>
+          <img class="thumbnail" src="${this._resto.pictureId}" alt="resto-image">
         </div>
-        <div class="desc">
-          ${this._resto.description}
-        </div>
-        <div class="row info">
-          <span class="location">${this._resto.city}</span>
-          <span class="rate">Rating: ${this._resto.rating}</span>
-        </div>
+        <span class="desc">${this._resto.description}</span>
+        <button class="info">
+          ${this._resto.city}
+        </button>
     `;
   }
 
