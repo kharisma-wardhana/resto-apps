@@ -5,6 +5,7 @@ import '../../components/item-menu/index.js';
 import '../../components/review-customer/index.js';
 import RestoData from '../../data/resto';
 import UrlParser from '../../utils/url-parser';
+import FavResto from '../../data/fav-restoDB';
 
 const Details = {
   async render() {
@@ -34,6 +35,12 @@ const Details = {
     const listMenu = document.createElement('list-menu');
     listMenu.menus = _details.restaurant.menus;
     menuContainer.innerHTML = listMenu.innerHTML;
+
+    const btnFav = document.querySelector('.fav');
+    btnFav.addEventListener('click', () => {
+      console.log('ADD Favorite Resto');
+      FavResto.putResto(_details.restaurant);
+    });
   },
 };
 
