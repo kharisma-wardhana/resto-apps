@@ -34,10 +34,11 @@ body {
     position: absolute;
     top: -40px;
     left: 0;
-    background-color: #bf1722;
+    background-color: #2f4858;
     color: white;
     padding: 8px;
-    z-index: 100;
+    z-index: 1035;
+    padding: 1rem 2rem;
 }
 
 .skip-link:focus {
@@ -54,7 +55,7 @@ body {
     align-items: center;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
 }
 
 .navbar-brand {
@@ -105,7 +106,7 @@ body {
 
 .nav_link {
     display: block;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     text-decoration: none;
 }
 
@@ -286,7 +287,7 @@ body {
 
 .resto-name {
     white-space: nowrap;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     justify-content: center;
     padding-bottom: 16px;
@@ -350,10 +351,6 @@ body {
     }
 }
 
-.right {
-    float: right;
-}
-
 .white-text {
     color: #fff;
 }
@@ -366,6 +363,7 @@ body {
     font-size: 12px;
     padding-top: 10px;
     padding-bottom: 10px;
+    justify-content: space-around;
 }
 
 .footer-copyright a {
@@ -406,4 +404,16 @@ body {
     border-bottom-right-radius: 8px;
     white-space: nowrap;
     padding: 10px;
+}
+
+spinner-loading span {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #DBD3D8;
+}
+
+.center {
+    align-content: center;
+    justify-content: center;
 }

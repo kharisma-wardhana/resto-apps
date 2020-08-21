@@ -1,3 +1,4 @@
+import API_ENDPOINT from '../../utils/api';
 class ItemResto extends HTMLElement {
   constructor() {
     super();
@@ -16,12 +17,13 @@ class ItemResto extends HTMLElement {
         </div>
         <div class="row">
           <span class="rate">${this._resto.rating}</span>
-          <img class="thumbnail" src="${this._resto.pictureId}" alt="resto-image">
+          <img class="thumbnail" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}">
         </div>
         <span class="desc">${this._resto.description}</span>
-        <button class="info">
-          ${this._resto.city}
-        </button>
+        <span>${this._resto.city}</span>
+        <a href="#/details/${this._resto.id}" class="detail">
+          More Info
+        </a>
     `;
   }
 

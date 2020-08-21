@@ -22,7 +22,7 @@ class AppBar extends HTMLElement {
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav_item active"><a class="nav_link" href="/">Home</a></li>
-                    <li class="nav_item"><a class="nav_link" href="#">Favorite</a></li>
+                    <li class="nav_item"><a class="nav_link" href="#/favorite">Favorite</a></li>
                     <li class="nav_item"><a class="nav_link" href="https://github.com/kharisma-wardhana">About Us</a></li>
                 </ul>
             </div>
