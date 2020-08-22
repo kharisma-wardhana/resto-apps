@@ -10,9 +10,7 @@ class SpinnerLoading extends HTMLElement {
   render() {
     this.innerHTML = `
         <div class="row center">
-          <span>
-            Loading...
-          </span>
+          <div class="animloading"><div></div><div></div><div></div><div></div></div>
         </div>`;
   }
 }

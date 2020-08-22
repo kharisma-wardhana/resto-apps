@@ -11,9 +11,9 @@ class ItemMenu extends HTMLElement {
   render() {
     // console.log(this._resto);
     this.innerHTML = `
-        <div class="row"> 
-            ${this._item.name}
-        </div>    
+        <ul> 
+          <li>${this._item.name}</li>
+        </ul>    
     `;
   }
 

@@ -12,18 +12,18 @@ class ItemResto extends HTMLElement {
   render() {
     // console.log(this._resto);
     this.innerHTML = `
-        <div class="row resto-name"> 
-          <span>${this._resto.name}</span>
-        </div>
-        <div class="row">
-          <span class="rate">${this._resto.rating}</span>
-          <img class="thumbnail" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}">
-        </div>
-        <span class="desc">${this._resto.description}</span>
-        <span>${this._resto.city}</span>
-        <a href="#/details/${this._resto.id}" class="detail">
-          More Info
-        </a>
+        <section class="card">
+          <div class="row resto-name"> 
+            <span>${this._resto.name}</span>
+          </div>
+          <div class="row">
+            <span class="rate">${this._resto.rating}</span>
+            <img class="thumbnail" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}">
+          </div>
+          <a href="#/details/${this._resto.id}" class="detail">
+            More Info
+          </a>
+        </section>
     `;
   }
 

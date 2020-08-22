@@ -10,7 +10,8 @@ class RestoData {
     const res = await fetch(API_ENDPOINT.LIST);
     const resJSON = await res.json();
     console.log(resJSON);
-    return resJSON;
+    const listResto = resJSON.restaurants;
+    return listResto;
   }
 
   static async detailResto(id) {

@@ -13,21 +13,24 @@ class DetailResto extends HTMLElement {
   render() {
     // console.log(this._resto);
     this.innerHTML = `
-        <div class="row resto-name"> 
-            <span>${this._resto.city}</span>
-            <span>${this._resto.name}</span>
+        <div class="row space-around py-20">
+          <h3>${this._resto.rating}</h3>
+          <h3>${this._resto.name}</h3>
+          <button class="fav bg-dark"><i class="far fa-heart"></i></button>
         </div>
-        <div class="row">
-            <span class="rate">${this._resto.rating}</span>
-            <img class="thumbnail" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}">
-        </div>
-        <div class="row">
-            ${this._resto.description}
-        </div>
+        <section>
+          <img src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}" width="100%">
+        </section>
+        
+        <section>
+          <div class="row center white-text bg-dark"><h4>Address</h4></div>  
+          <span>${this._resto.address}, ${this._resto.city}</span>
+        </section>
 
-        <div class="row">
-            ${this._resto.address}
-        </div>
+        <section>
+          <div class="row center white-text bg-dark"><h4>Description</h4></div>    
+            ${this._resto.description}
+        </section>
     `;
   }
 

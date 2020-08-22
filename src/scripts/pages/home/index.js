@@ -15,16 +15,12 @@ const Home = {
 
   async afterRender() {
     const restoListElement = document.querySelector('list-resto');
+    const loadingElement = document.querySelector('spinner-loading');
     const results = await RestoData.getAllDataAPI();
-    restoListElement.restorants = results.restaurants;
-
-    let btnInfo = document.getElementsByClassName('info');
-    for (let i = 0; i < btnInfo.length; i++) {
-      let desc = btnInfo[i].previousElementSibling;
-      btnInfo[i].addEventListener('click', () => {
-        desc.classList.toggle('show');
-      });
+    if (results != undefined) {
+      setTimeout(function () { loadingElement.style.display = 'none'; }, 1500);
     }
+    restoListElement.restorants = results;
   },
 };
 

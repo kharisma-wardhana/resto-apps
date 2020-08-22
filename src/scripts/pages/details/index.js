@@ -10,17 +10,20 @@ import FavResto from '../../data/fav-restoDB';
 const Details = {
   async render() {
     return `
-        <div>Details</div>
-        <spinner-loading></spinner-loading>
-        <section id="resto"></section>
-        <div class="row center">MENU</div>    
-        <section id="menus"></section>
-        <div class="row center">
-            <button class="fav">
-               Favorite
-            </button>
-        </div>
-        <review-customer></review-customer>
+        <section class="container pt-20 white-text">
+          <spinner-loading></spinner-loading>
+          <div id="resto"></div>
+        </section>
+        
+        <section class="container">
+          <div class="row center white-text bg-dark"><h4>Menu</h4></div>    
+          <div id="menus" class="container white-text"></div>
+        </section>
+
+        <section class="container">
+          <div class="row center white-text bg-dark"><h4>Review</h4></div> 
+          <review-customer></review-customer>
+        </section>
     `;
   },
   async afterRender() {
@@ -30,6 +33,10 @@ const Details = {
     const restoContainer = document.querySelector('#resto');
     const detailResto = document.createElement('detail-resto');
     detailResto.resto = _details.restaurant;
+    const loadingElement = document.querySelector('spinner-loading');
+    if (_details != undefined) {
+      setTimeout(function () { loadingElement.style.display = 'none'; }, 1500);
+    }
     restoContainer.innerHTML = detailResto.innerHTML;
     const menuContainer = document.querySelector('#menus');
     const listMenu = document.createElement('list-menu');
@@ -38,7 +45,7 @@ const Details = {
 
     const btnFav = document.querySelector('.fav');
     btnFav.addEventListener('click', () => {
-      console.log('ADD Favorite Resto');
+      console.log('add Favorite Resto');
       FavResto.putResto(_details.restaurant);
     });
   },
