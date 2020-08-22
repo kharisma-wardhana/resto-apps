@@ -18,7 +18,8 @@ class RestoData {
     const res = await fetch(API_ENDPOINT.DETAIL(id));
     const resJSON = await res.json();
     console.log(resJSON);
-    return resJSON;
+    const detailResto = resJSON.restaurant;
+    return detailResto;
   }
 }
 

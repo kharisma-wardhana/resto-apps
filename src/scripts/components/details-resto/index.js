@@ -16,7 +16,7 @@ class DetailResto extends HTMLElement {
         <div class="row space-around py-20">
           <h3>${this._resto.rating}</h3>
           <h3>${this._resto.name}</h3>
-          <button class="fav bg-dark"><i class="far fa-heart"></i></button>
+          <button class="fav bg-dark"><i class="iconFav far fa-heart"></i></button>
         </div>
         <section>
           <img src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}" width="100%">
@@ -24,7 +24,7 @@ class DetailResto extends HTMLElement {
         
         <section>
           <div class="row center white-text bg-dark"><h4>Address</h4></div>  
-          <span>${this._resto.address}, ${this._resto.city}</span>
+          <address>${this._resto.address}, ${this._resto.city}</address>
         </section>
 
         <section>

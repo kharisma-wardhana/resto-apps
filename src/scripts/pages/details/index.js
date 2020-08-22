@@ -21,32 +21,55 @@ const Details = {
         </section>
 
         <section class="container">
-          <div class="row center white-text bg-dark"><h4>Review</h4></div> 
-          <review-customer></review-customer>
+          <div class="row center white-text bg-dark"><h4>Reviews</h4></div> 
+          <div id="reviews" class="container white-text"></div>
         </section>
     `;
   },
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    console.log(url.id);
     const _details = await RestoData.detailResto(url.id);
-    const restoContainer = document.querySelector('#resto');
-    const detailResto = document.createElement('detail-resto');
-    detailResto.resto = _details.restaurant;
     const loadingElement = document.querySelector('spinner-loading');
     if (_details != undefined) {
       setTimeout(function () { loadingElement.style.display = 'none'; }, 1500);
     }
+
+    const restoContainer = document.querySelector('#resto');
+    const detailResto = document.createElement('detail-resto');
+
+    detailResto.resto = _details;
     restoContainer.innerHTML = detailResto.innerHTML;
+
     const menuContainer = document.querySelector('#menus');
     const listMenu = document.createElement('list-menu');
-    listMenu.menus = _details.restaurant.menus;
+    listMenu.menus = _details.menus;
     menuContainer.innerHTML = listMenu.innerHTML;
 
+    const reviewContainer = document.querySelector('#reviews');
+    const reviewCustomer = document.createElement('review-customer');
+    reviewCustomer.reviews = _details.consumerReviews;
+    reviewContainer.innerHTML = reviewCustomer.innerHTML;
+
     const btnFav = document.querySelector('.fav');
-    btnFav.addEventListener('click', () => {
-      console.log('add Favorite Resto');
-      FavResto.putResto(_details.restaurant);
+    const iconFav = document.querySelector('.iconFav');
+    let isAlreadySaved = await FavResto.getResto(url.id);
+    console.log(!!isAlreadySaved);
+    if (isAlreadySaved) {
+      iconFav.classList.remove('far');
+      iconFav.classList.add('fas');
+    }
+
+    btnFav.addEventListener('click', async () => {
+      iconFav.classList.toggle('far');
+      iconFav.classList.toggle('fas');
+
+      if (isAlreadySaved) {
+        console.log('delete from favorite');
+        FavResto.deleteResto(url.id);
+      } else {
+        console.log('add Favorite Resto');
+        FavResto.putResto(_details);
+      }
     });
   },
 };

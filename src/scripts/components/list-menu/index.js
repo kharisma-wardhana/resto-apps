@@ -9,14 +9,16 @@ class ListMenu extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = '';
+    this.innerHTML = '<strong>Foods</strong>';
     // console.log(this._restorants);
+
     this._menus.foods.map(_food => {
       const menuItem = document.createElement('item-menu');
       menuItem.item = _food;
       this.appendChild(menuItem);
     });
 
+    this.innerHTML += '<strong>Drinks</strong>';
     this._menus.drinks.map(_drink => {
       const menuItem = document.createElement('item-menu');
       menuItem.item = _drink;
