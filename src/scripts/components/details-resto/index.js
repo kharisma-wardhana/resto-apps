@@ -1,10 +1,6 @@
 import API_ENDPOINT from '../../utils/api';
 
 class DetailResto extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   set resto(resto) {
     this._resto = resto;
     this.render();

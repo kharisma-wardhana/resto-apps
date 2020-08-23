@@ -12,6 +12,7 @@
 main {
     padding-bottom: 10%;
     background-color: #33658A;
+    min-height: 100%;
 }
 
 body,

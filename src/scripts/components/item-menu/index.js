@@ -1,8 +1,4 @@
 class ItemMenu extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   set item(item) {
     this._item = item;
     this.render();

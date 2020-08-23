@@ -1,7 +1,7 @@
-import '../../components/hero-element/index.js';
-import '../../components/list-resto/index.js';
-import '../../components/item-resto/index.js';
-import '../../components/spinner-loading/index.js';
+import '../../components/hero-element/index';
+import '../../components/list-resto/index';
+import '../../components/item-resto/index';
+import '../../components/spinner-loading/index';
 import RestoData from '../../data/resto';
 
 const Home = {
@@ -17,8 +17,8 @@ const Home = {
     const restoListElement = document.querySelector('list-resto');
     const loadingElement = document.querySelector('spinner-loading');
     const results = await RestoData.getAllDataAPI();
-    if (results != undefined) {
-      setTimeout(function () { loadingElement.style.display = 'none'; }, 1500);
+    if (results !== undefined) {
+      setTimeout(() => { loadingElement.style.display = 'none'; }, 1500);
     }
     restoListElement.restorants = results;
   },

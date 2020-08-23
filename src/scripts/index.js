@@ -1,16 +1,16 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
-import './components/app-bar/index.js';
-import './components/footer/index.js';
-import routes from './routes/index.js';
+import './components/app-bar/index';
+import './components/footer/index';
+import routes from './routes/index';
 import swRegister from './utils/sw-register';
 import UrlParser from './utils/url-parser';
 
 // Load page content
 const loadPage = async () => {
-  let content = document.querySelector('#maincontent');
+  const content = document.querySelector('#maincontent');
   let hashURL = UrlParser.parseActiveUrlWithCombiner();
-  if (hashURL == '') hashURL = '/';
+  if (hashURL === '') hashURL = '/';
   console.log(hashURL);
   const page = routes[hashURL];
   console.log(page);
@@ -22,23 +22,22 @@ const loadPage = async () => {
 window.addEventListener('hashchange', loadPage);
 window.addEventListener('DOMContentLoaded', loadPage);
 
-let navLink = document.querySelectorAll('.nav_link');
-navLink[0].addEventListener('click', () => {
-  console.log('navlink clicked');
-  navLink[0].parentElement.classList.toggle('active');
-  navLink[1].parentElement.classList.toggle('active');
-});
-navLink[1].addEventListener('click', () => {
-  console.log('navlink clicked');
-  navLink[0].parentElement.classList.toggle('active');
-  navLink[1].parentElement.classList.toggle('active');
-});
+const navLink = document.querySelectorAll('.nav_link');
+for (let i = 0; i < navLink.length; i += 1) {
+  navLink[i].addEventListener('click', () => {
+    console.log('navlink clicked');
+    if (i > 0) {
+      navLink[i].parentElement.previousElementSibling.classList.toggle('active');
+    } else {
+      navLink[i].parentElement.nextElementSibling.classList.toggle('active');
+    }
+    navLink[i].parentElement.classList.toggle('active');
+  });
+}
 
-let toggleNav = document.getElementById('toggleNav');
+const toggleNav = document.getElementById('toggleNav');
 toggleNav.addEventListener('click', () => {
   console.log('Clicked');
-  let navbarMobile = document.getElementById('navbarResponsive');
+  const navbarMobile = document.getElementById('navbarResponsive');
   navbarMobile.classList.toggle('show');
 });
-
-

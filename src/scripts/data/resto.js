@@ -1,4 +1,4 @@
-import dummyData from './../../DATA.json';
+import dummyData from '../../DATA.json';
 import API_ENDPOINT from '../utils/api';
 
 class RestoData {

@@ -1,7 +1,7 @@
-import '../../components/spinner-loading/index.js';
-import '../../components/list-resto/index.js';
-import '../../components/item-resto/index.js';
-import FavResto from '../../data/fav-restoDB.js';
+import '../../components/spinner-loading/index';
+import '../../components/list-resto/index';
+import '../../components/item-resto/index';
+import FavResto from '../../data/fav-restoDB';
 
 const Favorite = {
   async render() {
@@ -16,8 +16,8 @@ const Favorite = {
     const restoListElement = document.querySelector('list-resto');
     const results = await FavResto.getAllRestoes();
     const loadingElement = document.querySelector('spinner-loading');
-    if (results != undefined) {
-      setTimeout(function () { loadingElement.style.display = 'none'; }, 1500);
+    if (results !== undefined) {
+      setTimeout(() => { loadingElement.style.display = 'none'; }, 1500);
     }
     restoListElement.restorants = results;
   },

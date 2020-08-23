@@ -1,8 +1,4 @@
 class ReviewCustomer extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   set reviews(reviews) {
     this._reviews = reviews;
     this.render();
@@ -12,21 +8,21 @@ class ReviewCustomer extends HTMLElement {
     // console.log(this._resto);
     this.innerHTML = '';
 
-    this._reviews.map(_review => {
-      const reviewerName = document.createElement("strong");
+    this._reviews.map((_review) => {
+      const reviewerName = document.createElement('strong');
       reviewerName.innerHTML = _review.name;
       this.appendChild(reviewerName);
 
-      const reviewComment = document.createElement("div");
+      const reviewComment = document.createElement('div');
       reviewComment.innerHTML = `<q>${_review.review}</q>`;
       this.appendChild(reviewComment);
 
-      const reviewDate = document.createElement("div");
+      const reviewDate = document.createElement('div');
       reviewDate.style.fontSize = '10px';
       reviewDate.innerHTML = _review.date;
       this.appendChild(reviewDate);
 
-      this.appendChild(document.createElement("hr"));
+      return this.appendChild(document.createElement('hr'));
     });
   }
 

@@ -1,8 +1,8 @@
-import '../../components/spinner-loading/index.js';
-import '../../components/details-resto/index.js';
-import '../../components/list-menu/index.js';
-import '../../components/item-menu/index.js';
-import '../../components/review-customer/index.js';
+import '../../components/spinner-loading/index';
+import '../../components/details-resto/index';
+import '../../components/list-menu/index';
+import '../../components/item-menu/index';
+import '../../components/review-customer/index';
 import RestoData from '../../data/resto';
 import UrlParser from '../../utils/url-parser';
 import FavResto from '../../data/fav-restoDB';
@@ -30,8 +30,8 @@ const Details = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const _details = await RestoData.detailResto(url.id);
     const loadingElement = document.querySelector('spinner-loading');
-    if (_details != undefined) {
-      setTimeout(function () { loadingElement.style.display = 'none'; }, 1500);
+    if (_details !== undefined) {
+      setTimeout(() => { loadingElement.style.display = 'none'; }, 1500);
     }
 
     const restoContainer = document.querySelector('#resto');
@@ -52,7 +52,7 @@ const Details = {
 
     const btnFav = document.querySelector('.fav');
     const iconFav = document.querySelector('.iconFav');
-    let isAlreadySaved = await FavResto.getResto(url.id);
+    const isAlreadySaved = await FavResto.getResto(url.id);
     console.log(!!isAlreadySaved);
     if (isAlreadySaved) {
       iconFav.classList.remove('far');

@@ -1,8 +1,4 @@
 class ListResto extends HTMLElement {
-  constructor() {
-    super();
-  }
-
   set restorants(restorants) {
     this._restorants = restorants;
     this.render();
@@ -11,11 +7,11 @@ class ListResto extends HTMLElement {
   render() {
     this.innerHTML = '';
     // console.log(this._restorants);
-    this._restorants.map(_resto => {
+    this._restorants.map((_resto) => {
       const restoItem = document.createElement('item-resto');
       restoItem.resto = _resto;
       restoItem.classList.add('grid-item');
-      this.appendChild(restoItem);
+      return this.appendChild(restoItem);
     });
   }
 
