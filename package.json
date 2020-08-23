@@ -1,5 +1,5 @@
 {
-  "name": "restaurant-apps",
+  "name": "foodies-pwa",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -36,11 +36,12 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
+    "webpack-pwa-manifest": "^4.2.0",
+    "serviceworker-webpack-plugin": "^1.0.1",
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
     "idb": "^5.0.4",
-    "regenerator-runtime": "^0.13.5",
-    "serviceworker-webpack-plugin": "^1.0.1"
+    "regenerator-runtime": "^0.13.5"
   }
 }
