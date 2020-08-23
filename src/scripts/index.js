@@ -22,6 +22,18 @@ const loadPage = async () => {
 window.addEventListener('hashchange', loadPage);
 window.addEventListener('DOMContentLoaded', loadPage);
 
+let navLink = document.querySelectorAll('.nav_link');
+navLink[0].addEventListener('click', () => {
+  console.log('navlink clicked');
+  navLink[0].parentElement.classList.toggle('active');
+  navLink[1].parentElement.classList.toggle('active');
+});
+navLink[1].addEventListener('click', () => {
+  console.log('navlink clicked');
+  navLink[0].parentElement.classList.toggle('active');
+  navLink[1].parentElement.classList.toggle('active');
+});
+
 let toggleNav = document.getElementById('toggleNav');
 toggleNav.addEventListener('click', () => {
   console.log('Clicked');

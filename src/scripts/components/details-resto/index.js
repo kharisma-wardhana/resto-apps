@@ -14,7 +14,7 @@ class DetailResto extends HTMLElement {
     // console.log(this._resto);
     this.innerHTML = `
         <div class="row space-around py-20">
-          <h3>${this._resto.rating}</h3>
+          <h3>${this._resto.rating} <i class="fas fa-star"></i></h3>
           <h3>${this._resto.name}</h3>
           <button class="fav bg-dark"><i class="iconFav far fa-heart"></i></button>
         </div>
