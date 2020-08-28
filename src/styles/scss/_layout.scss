@@ -1,0 +1,98 @@
+.fixed {
+    position: fixed;
+    z-index: 1030;
+    
+    &-top {
+        position: fixed;
+        z-index: 1030;
+        top:0;
+        right: 0;
+        left: 0;
+    }
+
+    &-bottom {
+        position: fixed;
+        z-index: 1030;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.center {
+    align-content: center;
+    justify-content: center;
+}
+
+.space-around{
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.py-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.collapse {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: min-content min-content min-content;
+    padding: 3%;
+    text-align: center;
+    justify-items: center;
+}
+
+.grid-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-around;
+    
+    a {
+        text-decoration: none;
+        font-weight: 600;
+    }
+}

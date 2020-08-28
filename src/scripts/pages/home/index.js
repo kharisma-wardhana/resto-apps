@@ -18,7 +18,9 @@ const Home = {
     const loadingElement = document.querySelector('spinner-loading');
     const results = await RestoData.getAllDataAPI();
     if (results !== undefined) {
-      setTimeout(() => { loadingElement.style.display = 'none'; }, 1500);
+      setTimeout(() => {
+        loadingElement.style.display = 'none';
+      }, 1500);
     }
     restoListElement.restorants = results;
   },

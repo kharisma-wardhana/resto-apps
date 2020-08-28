@@ -2,10 +2,10 @@ import Home from '../pages/home';
 import Favorite from '../pages/favorite';
 import Details from '../pages/details';
 
-const routes = {
+const routesObj = {
   '/': Home,
   '/favorite': Favorite,
   '/details/:id': Details,
 };
 
-export default routes;
+export default routesObj;

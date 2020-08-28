@@ -16,6 +16,11 @@ const Details = {
         </section>
         
         <section class="container">
+          <div class="row center white-text bg-dark"><h4>Category</h4></div>    
+          <div id="category" class="container white-text"></div>
+        </section>
+        
+        <section class="container">
           <div class="row center white-text bg-dark"><h4>Menu</h4></div>    
           <div id="menus" class="container white-text"></div>
         </section>
@@ -31,7 +36,9 @@ const Details = {
     const _details = await RestoData.detailResto(url.id);
     const loadingElement = document.querySelector('spinner-loading');
     if (_details !== undefined) {
-      setTimeout(() => { loadingElement.style.display = 'none'; }, 1500);
+      setTimeout(() => {
+        loadingElement.style.display = 'none';
+      }, 1500);
     }
 
     const restoContainer = document.querySelector('#resto');
@@ -39,6 +46,13 @@ const Details = {
 
     detailResto.resto = _details;
     restoContainer.innerHTML = detailResto.innerHTML;
+
+    const catContainer = document.querySelector('#category');
+    _details.categories.map((_category) => {
+      const catItem = document.createElement('ul');
+      catItem.innerHTML = `<li>${_category.name}</li>`;
+      return catContainer.appendChild(catItem);
+    });
 
     const menuContainer = document.querySelector('#menus');
     const listMenu = document.createElement('list-menu');

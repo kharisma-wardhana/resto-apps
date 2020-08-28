@@ -1,0 +1,40 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.bg-dark {
+    background-color: darken($primary-color, 15%);
+}
+
+.white-text {
+    color: #fff;
+}
+
+.grey-text {
+    color: darkgrey;
+}
+
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #DBD3D8;
+}
+
+.thumbnail {
+    max-width: 100%;
+    height: auto;
+    transform-origin: 50%;
+    transition: 2s ease;
+
+    &:hover, 
+    &:focus {
+        transform: scale(1.4);
+        -webkit-filter: blur(2px);
+    }
+}

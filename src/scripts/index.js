@@ -1,20 +1,21 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import '../styles/main.css';
+import '../styles/css/main.css';
 import './components/app-bar/index';
 import './components/footer/index';
-import routes from './routes/index';
+import routesObj from './routes/index';
 import swRegister from './utils/sw-register';
 import UrlParser from './utils/url-parser';
 
 // Load page content
 const loadPage = async () => {
-  const content = document.querySelector('#maincontent');
   let hashURL = UrlParser.parseActiveUrlWithCombiner();
   if (hashURL === '') hashURL = '/';
   console.log(hashURL);
-  const page = routes[hashURL];
-  console.log(page);
-  content.innerHTML = await page.render();
+  const page = await routesObj[hashURL];
+  const renderPage = await page.render();
+  const content = document.querySelector('#maincontent');
+  console.log(content);
+  content.innerHTML = renderPage;
   await page.afterRender();
   swRegister();
 };
