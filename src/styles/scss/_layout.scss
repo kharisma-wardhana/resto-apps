@@ -1,11 +1,11 @@
 .fixed {
     position: fixed;
     z-index: 1030;
-    
+
     &-top {
         position: fixed;
         z-index: 1030;
-        top:0;
+        top: 0;
         right: 0;
         left: 0;
     }
@@ -24,7 +24,7 @@
     justify-content: center;
 }
 
-.space-around{
+.space-around {
     align-content: space-around;
     justify-content: space-around;
 }
@@ -60,8 +60,8 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .col {
@@ -90,7 +90,7 @@
     padding-top: 10px;
     padding-bottom: 10px;
     justify-content: space-around;
-    
+
     a {
         text-decoration: none;
         font-weight: 600;
