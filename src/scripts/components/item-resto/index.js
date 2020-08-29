@@ -18,7 +18,7 @@ class ItemResto extends HTMLElement {
           <img class="thumbnail" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}">
         </div>
         <details>
-          <div class="mini-details">${this._resto.city}</div>
+          <summary>${this._resto.city}</summary>
           <div class="mini-details">${this._resto.description}</div>
           <a href="#/details/${this._resto.id}" class="row center detail">
             More Info
