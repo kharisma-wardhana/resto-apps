@@ -68,6 +68,9 @@
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%
 }
 
 .grid-container {
@@ -87,7 +90,8 @@
     font-size: 12px;
     padding-top: 10px;
     padding-bottom: 10px;
-    justify-content: space-around;
+    display: flex;
+    justify-content: space-between;
 
     a {
         text-decoration: none;

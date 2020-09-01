@@ -47,29 +47,34 @@ main {
     }
 }
 
+.nav_item {
+    &.active {
+        font-weight: 600;
+        background-color: darken($primary-color, 25%);
+    }
+}
+
 .navbar {
     position: relative;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -ms-flex-align: center;
     align-items: center;
-    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
-    
-    &-nav {
-        display: -ms-flexbox;
+
+    &-header {
         display: flex;
-        -ms-flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &-nav {
+        display: flex;
         flex-wrap: wrap;
         padding-left: 0;
         margin-bottom: 0;
         list-style: none;
-        margin-right: auto;
         flex-direction: column;
-        
+
         .nav_link {
             color: lighten($font-color, 80%);
             display: block;
@@ -95,14 +100,10 @@ main {
     }
     
     &-collapse {
-        -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-        -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
         flex-grow: 1;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
+        justify-content: flex-end;
     }
 
     &-dark {
@@ -129,7 +130,7 @@ main {
 
         .navbar-toggler {
             color: lighten($font-color, 20%);
-            border-color: darken($font-color, 20%);
+            border-color: lighten($font-color, 80%);
 
             &:focus {
                 outline-color: lighten($font-color, 60%);
@@ -150,6 +151,7 @@ main {
 }
 
 .app-brand {
+    display: flex;
     align-items: center;
     padding-right: 2rem;
     padding-left: 2rem;
@@ -263,11 +265,21 @@ spinner-loading {
     font-size: 1.25rem;
     text-decoration-line: none;
     color: $font-color;
+    min-width: 44px;
+    min-height: 44px;
     
     &:hover,
     &:focus {
         color: $primary-color
     }
+}
+
+summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .rate {
@@ -301,7 +313,11 @@ h3 {
     border-color: transparent;
     color: white;
 }
-
+.review-date {
+    display: flex;
+    font-size: 11px;
+    justify-content: flex-end;
+}
 @import '_layout';
 @import '_util';
 @import '_responsive';

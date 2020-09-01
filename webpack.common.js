@@ -62,9 +62,8 @@ module.exports = {
       icons: [
         {
           src: path.resolve('src/public/images/cook.png'),
-          sizes: [120, 152, 167, 180, 192, 512],
+          sizes: [36, 48, 72, 96, 128, 144, 152, 192, 384, 512],
           ios: true,
-          purpose: 'maskable'
         },
       ]
     }),

@@ -6,7 +6,7 @@ class Footer extends HTMLElement {
   render() {
     this.innerHTML = `
         <div class="bg-dark white-text">
-            <div class="footer-copyright row">
+            <div class="footer-copyright container">
                     © 2020 Copyright KharismaWardhana
                     <a class="white-text" href="/">Foodies</a>
             </div>

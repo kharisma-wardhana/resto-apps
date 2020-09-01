@@ -18,7 +18,7 @@ class ReviewCustomer extends HTMLElement {
       this.appendChild(reviewComment);
 
       const reviewDate = document.createElement('div');
-      reviewDate.style.fontSize = '10px';
+      reviewDate.classList.add('review-date');
       reviewDate.innerHTML = _review.date;
       this.appendChild(reviewDate);
 
