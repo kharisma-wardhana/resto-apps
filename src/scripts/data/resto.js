@@ -1,11 +1,6 @@
-import dummyData from '../../DATA.json';
 import API_ENDPOINT from '../utils/api';
 
 class RestoData {
-  static getAllData() {
-    return dummyData;
-  }
-
   static async getAllDataAPI() {
     const res = await fetch(API_ENDPOINT.LIST);
     const resJSON = await res.json();

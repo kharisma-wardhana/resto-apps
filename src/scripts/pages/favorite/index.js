@@ -9,6 +9,7 @@ const Favorite = {
     <section id="section-fav">
         <h2 class="row center white-text py-20">List Favorite Resto</h2>
         <spinner-loading></spinner-loading>
+        <span id="fav-notfound" class="row center white-text hide">Belum ada restaurant yang Anda sukai</span>
         <list-resto class="grid-container"></list-resto>
     </section>`;
   },
@@ -17,9 +18,15 @@ const Favorite = {
     const results = await FavResto.getAllRestoes();
     const loadingElement = document.querySelector('spinner-loading');
     if (results !== undefined) {
-      setTimeout(() => { loadingElement.style.display = 'none'; }, 1500);
+      setTimeout(() => {
+        loadingElement.style.display = 'none';
+        if (results.length === 0) {
+          const fav_info = document.querySelector('#fav-notfound');
+          fav_info.classList.toggle('hide');
+        }
+        restoListElement.restorants = results;
+      }, 1500);
     }
-    restoListElement.restorants = results;
   },
 };
 

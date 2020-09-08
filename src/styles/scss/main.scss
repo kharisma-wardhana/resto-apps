@@ -163,8 +163,9 @@ main {
 
 .hero {
     padding: 2rem 1rem;
-    background: center center / cover no-repeat url('../../public/images/hero-image_3.jpg');
-    
+    background: center center / cover no-repeat;
+    background-image: url('../../public/images/hero-image_3-small.jpg');
+
     &::before {
         content: "";
         position: absolute;
@@ -173,6 +174,12 @@ main {
         top: 0;
         bottom: 0;
         background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+    }
+}
+
+@media (min-width: 468px) {
+    .hero {
+        background-image: url('../../public/images/hero-image_3-large.jpg');
     }
 }
 

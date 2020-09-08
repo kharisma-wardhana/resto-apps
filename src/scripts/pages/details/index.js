@@ -38,7 +38,7 @@ const Details = {
     if (_details !== undefined) {
       setTimeout(() => {
         loadingElement.style.display = 'none';
-      }, 1500);
+      }, 500);
     }
 
     const restoContainer = document.querySelector('#resto');

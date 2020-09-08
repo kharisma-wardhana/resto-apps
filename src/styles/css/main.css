@@ -186,7 +186,8 @@ main {
 
 .hero {
   padding: 2rem 1rem;
-  background: center center/cover no-repeat url("../../public/images/hero-image_3.jpg");
+  background: center center / cover no-repeat;
+  background-image: url("../../public/images/hero-image_3-small.jpg");
 }
 
 .hero::before {
@@ -198,6 +199,12 @@ main {
   bottom: 0;
   background: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.1)));
   background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+}
+
+@media (min-width: 468px) {
+  .hero {
+    background-image: url("../../public/images/hero-image_3-large.jpg");
+  }
 }
 
 spinner-loading span {

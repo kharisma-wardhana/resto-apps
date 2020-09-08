@@ -20,9 +20,9 @@ const Home = {
     if (results !== undefined) {
       setTimeout(() => {
         loadingElement.style.display = 'none';
+        restoListElement.restorants = results;
       }, 1500);
     }
-    restoListElement.restorants = results;
   },
 };
 

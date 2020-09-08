@@ -15,7 +15,7 @@ class DetailResto extends HTMLElement {
           <button class="fav bg-dark"><i class="iconFav far fa-heart"></i></button>
         </div>
         <section>
-          <img src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}" width="100%">
+          <img class="lazyload" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}" width="100%">
         </section>
         
         <section>
