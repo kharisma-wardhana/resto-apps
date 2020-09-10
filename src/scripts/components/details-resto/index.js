@@ -12,7 +12,7 @@ class DetailResto extends HTMLElement {
         <div class="row space-around py-20">
           <h3>${this._resto.rating} <i class="fas fa-star"></i></h3>
           <h3>${this._resto.name}</h3>
-          <button class="fav bg-dark"><i class="iconFav far fa-heart"></i></button>
+          <div class="btn-container"></div>
         </div>
         <section>
           <img class="lazyload" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}" width="100%">

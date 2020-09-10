@@ -6,6 +6,7 @@ import '../../components/review-customer/index';
 import RestoData from '../../data/resto';
 import UrlParser from '../../utils/url-parser';
 import FavResto from '../../data/fav-restoDB';
+import btnFav from '../../components/details-resto/btnFav';
 
 const Details = {
   async render() {
@@ -33,9 +34,9 @@ const Details = {
   },
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const _details = await RestoData.detailResto(url.id);
+    const resto = await RestoData.detailResto(url.id);
     const loadingElement = document.querySelector('spinner-loading');
-    if (_details !== undefined) {
+    if (resto !== undefined) {
       setTimeout(() => {
         loadingElement.style.display = 'none';
       }, 500);
@@ -44,11 +45,11 @@ const Details = {
     const restoContainer = document.querySelector('#resto');
     const detailResto = document.createElement('detail-resto');
 
-    detailResto.resto = _details;
+    detailResto.resto = resto;
     restoContainer.innerHTML = detailResto.innerHTML;
 
     const catContainer = document.querySelector('#category');
-    _details.categories.map((_category) => {
+    resto.categories.map((_category) => {
       const catItem = document.createElement('ul');
       catItem.innerHTML = `<li>${_category.name}</li>`;
       return catContainer.appendChild(catItem);
@@ -56,34 +57,18 @@ const Details = {
 
     const menuContainer = document.querySelector('#menus');
     const listMenu = document.createElement('list-menu');
-    listMenu.menus = _details.menus;
+    listMenu.menus = resto.menus;
     menuContainer.innerHTML = listMenu.innerHTML;
 
     const reviewContainer = document.querySelector('#reviews');
     const reviewCustomer = document.createElement('review-customer');
-    reviewCustomer.reviews = _details.consumerReviews;
+    reviewCustomer.reviews = resto.consumerReviews;
     reviewContainer.innerHTML = reviewCustomer.innerHTML;
 
-    const btnFav = document.querySelector('.fav');
-    const iconFav = document.querySelector('.iconFav');
-    const isAlreadySaved = await FavResto.getResto(url.id);
-    console.log(!!isAlreadySaved);
-    if (isAlreadySaved) {
-      iconFav.classList.remove('far');
-      iconFav.classList.add('fas');
-    }
-
-    btnFav.addEventListener('click', async () => {
-      iconFav.classList.toggle('far');
-      iconFav.classList.toggle('fas');
-
-      if (isAlreadySaved) {
-        console.log('delete from favorite');
-        FavResto.deleteResto(url.id);
-      } else {
-        console.log('add Favorite Resto');
-        FavResto.putResto(_details);
-      }
+    btnFav.init({
+      btnContainer: document.querySelector('.btn-container'),
+      favResto: FavResto,
+      resto: resto,
     });
   },
 };
