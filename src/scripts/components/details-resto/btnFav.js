@@ -39,6 +39,6 @@ const btnFav = {
       this._renderButton();
     });
   },
-}
+};
 
 export default btnFav;

@@ -1,20 +1,19 @@
 // Like resto test case:
 // - Resto blm di like
-// - Show button like type outline (heart icon outline) 
-// - User click button like  
+// - Show button like type outline (heart icon outline)
+// - User click button like
 // - Show button like type solid (heart icon change to solid)
 // - Add data resto ke idb
 // Negative:
 // Resto sudah di like :
 // 0> Tidak perlu menyimpan data resto ke idb
-// Missing ID resto:  
+// Missing ID resto:
 // 0> Skip save process
 
 import createLikeButtonWithResto from './helper/testHelper';
 import FavResto from '../src/scripts/data/fav-restoDB';
 
 describe('Liking A Restaurant', () => {
-
   const addButtonContainer = () => {
     document.body.innerHTML = '<div class="btn-container"></div>';
   };
@@ -23,13 +22,13 @@ describe('Liking A Restaurant', () => {
     addButtonContainer();
   });
 
-  it(`should show the like button when the resto hasn/'t been liked before`, async () => {
+  it('should show the like button when the resto hasn/\'t been liked before', async () => {
     await createLikeButtonWithResto({ id: 1 });
 
     expect(document.querySelector('.far')).toBeTruthy();
   });
 
-  it(`should not show the unlike button when the resto hasn/'t been liked before`, async () => {
+  it('should not show the unlike button when the resto hasn/\'t been liked before', async () => {
     await createLikeButtonWithResto({ id: 1 });
 
     expect(document.querySelector('.fas')).toBeFalsy();
@@ -60,5 +59,4 @@ describe('Liking A Restaurant', () => {
     document.querySelector('.fav').dispatchEvent(new Event('click'));
     expect(await FavResto.getAllRestoes()).toEqual([]);
   });
-
 });

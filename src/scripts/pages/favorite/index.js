@@ -21,8 +21,8 @@ const Favorite = {
       setTimeout(() => {
         loadingElement.style.display = 'none';
         if (results.length === 0) {
-          const fav_info = document.querySelector('#fav-notfound');
-          fav_info.classList.toggle('hide');
+          const favInfo = document.querySelector('#fav-notfound');
+          favInfo.classList.toggle('hide');
         }
         restoListElement.restorants = results;
       }, 1500);

@@ -15,7 +15,7 @@ class ItemResto extends HTMLElement {
         </div>
         <div class="row">
           <span class="rate center">${this._resto.rating} <i class="fas fa-star"></i></span>
-          <img class="thumbnail lazyload" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}">
+          <img class="thumbnail lazyload" data-src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}" crossorigin="anonymous">
         </div>
         <details>
           <summary>${this._resto.city}</summary>

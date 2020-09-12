@@ -1,7 +1,7 @@
 // Unlike resto test case:
 // - Resto sudah di like
-// - Show button like type solid (heart icon solid) 
-// - User click button like  
+// - Show button like type solid (heart icon solid)
+// - User click button like
 // - Show button like type outline (heart icon change to outline)
 // - Remove data resto dari idb
 // Negative:
@@ -11,7 +11,6 @@ import createLikeButtonWithResto from './helper/testHelper';
 import FavResto from '../src/scripts/data/fav-restoDB';
 
 describe('Unliking A Restaurant', () => {
-
   const addButtonContainer = () => {
     document.body.innerHTML = '<div class="btn-container"></div>';
   };
@@ -31,7 +30,7 @@ describe('Unliking A Restaurant', () => {
     expect(document.querySelector('.fas')).toBeTruthy();
   });
 
-  it(`shouldn/'t display like button when the resto has been liked`, async () => {
+  it('shouldn/\'t display like button when the resto has been liked', async () => {
     await createLikeButtonWithResto({ id: 1 });
 
     expect(document.querySelector('.far')).toBeFalsy();
@@ -45,7 +44,7 @@ describe('Unliking A Restaurant', () => {
     expect(await FavResto.getAllRestoes()).toEqual([]);
   });
 
-  it(`shouldn/'t throw error if the unliked resto isn/'t in the list`, async () => {
+  it('shouldn/\'t throw error if the unliked resto isn/\'t in the list', async () => {
     await createLikeButtonWithResto({ id: 1 });
     await FavResto.deleteResto(1);
 

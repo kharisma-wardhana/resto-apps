@@ -68,7 +68,7 @@ const Details = {
     btnFav.init({
       btnContainer: document.querySelector('.btn-container'),
       favResto: FavResto,
-      resto: resto,
+      resto,
     });
   },
 };

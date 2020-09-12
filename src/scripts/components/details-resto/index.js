@@ -15,7 +15,7 @@ class DetailResto extends HTMLElement {
           <div class="btn-container"></div>
         </div>
         <section>
-          <img class="lazyload" src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}" width="100%">
+          <img class="lazyload" data-src="${API_ENDPOINT.PICTURE(this._resto.pictureId)}" alt="${this._resto.name}" width="100%" crossorigin="anonymous">
         </section>
         
         <section>
