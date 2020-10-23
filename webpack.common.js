@@ -5,13 +5,13 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ImageminMozjpeg = require('imagemin-mozjpeg');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src/scripts/index.js'),
+  entry: path.resolve(__dirname, './src/scripts/index.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js',
   },
   optimization: {
@@ -67,14 +67,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/templates/index.html'),
+      template: path.resolve(__dirname, './src/templates/index.html'),
       filename: 'index.html',
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/public/'),
-          to: path.resolve(__dirname, 'dist/'),
+          from: path.resolve(__dirname, './src/public/'),
+          to: path.resolve(__dirname, './dist/'),
         },
       ],
     }),
@@ -89,14 +89,14 @@ module.exports = {
       start_url: '/',
       icons: [
         {
-          src: path.resolve('src/public/images/cook.png'),
+          src: path.resolve('./src/public/images/cook.png'),
           sizes: [36, 48, 72, 96, 128, 144, 152, 192, 384, 512],
           ios: true,
         },
       ]
     }),
     new ServiceWorkerWebpackPlugin({
-      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+      entry: path.resolve(__dirname, './src/scripts/sw.js'),
     }),
     new ImageminWebpackPlugin({
       plugins: [
@@ -106,6 +106,6 @@ module.exports = {
         }),
       ],
     }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
 };
